@@ -1,0 +1,36 @@
+# Node modules
+/node_modules
+# Evita subir miles de dependencias de Node.js (esto solo ocupa espacio y no es necesario subirlo).
+
+# Archivos de entorno
+.env
+
+# Archivos temporales o de sistema
+*.log
+.DS_Store
+Thumbs.db
+#vita archivos temporales que genera tu sistema operativo o errores de npm.
+
+# Archivos de backup o de VSCode
+.vscode/
+*.tmp
+#Correcto — así no subís configuraciones personales de tu editor.
+
+# Archivos de configuración locales
+database/config/
+
+# Backups y bases de datos locales
+*.bak
+*.sql
+*.sqlite
+*.db
+
+# Archivos de entorno adicionales
+*.env.local
+*.env.development
+*.env.production
+
+# Archivos de despliegue o secretos
+.secret
+credentials.json
+

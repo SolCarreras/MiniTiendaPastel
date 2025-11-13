@@ -1,0 +1,40 @@
+<%- include("../layout/header", { title: "Tu Carrito" }) %>
+<section class="carrito-section">
+ <a href="/" class="btn-volver">Volver</a> 
+<h2>Tu carrito</h2>
+
+<% if (carrito && carrito.length > 0) { %>
+  <table>
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Cantidad</th>
+        <th>Precio unitario</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% carrito.forEach(item => { %>
+        <tr>
+          <td><%= item.producto.nombre %></td>
+          <td><%= item.cantidad %></td>
+          <td>$<%= item.producto.precio %></td>
+          <td>$<%= (item.cantidad * item.producto.precio).toFixed(2) %></td>
+        </tr>
+      <% }) %>
+    </tbody>
+  </table>
+
+  <h3>Total: $<%= total.toFixed(2) %></h3>
+<% } else { %>
+  <p>Tu carrito está vacío 🛍️</p>
+<% } %>
+
+<a href="/productos" class="btn-volver">Seguir comprando</a>
+</section>
+
+
+</main>
+<%- include("../layout/footer", { title: "Footer" }) %>
+</body>
+</html>

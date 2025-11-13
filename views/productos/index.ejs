@@ -1,0 +1,33 @@
+<%- include("../layout/header", { title: "Productos" }) %>
+
+
+<section class="section-producto">
+    <a href="/" class="btn-volver">Volver</a> 
+<h2>Productos disponibles</h2>
+
+<section class="productos-lista">
+  <% if (productos && productos.length > 0) { %>
+    <% productos.forEach(producto => { %>
+      <div class="producto-card">
+        <img src="<%= producto.imagen %>" alt="<%= producto.nombre %>" width="150">
+        <h3><%= producto.nombre %></h3>
+        <p>$<%= producto.precio %></p>
+        <form action="/carrito/agregar" method="POST">
+          <input type="hidden" name="producto_id" value="<%= producto.id %>">
+            <input type="hidden" name="cantidad" value="1">
+          <button type="submit" class="btn-agregar">Agregar al carrito</button>
+        </form>
+      </div>
+    <% }) %>
+  <% } else { %>
+    <p>No hay productos disponibles.</p>
+  <% } %>
+
+
+
+</section>
+</section>
+ <%- include("../layout/footer", { title: "Footer" }) %>  
+</main>
+</body>
+</html>

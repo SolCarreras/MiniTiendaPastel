@@ -1,0 +1,253 @@
+body {
+  font-family: "Poppins", sans-serif;
+  color: #444;
+  margin: 0;
+  padding: 0;
+   height: 100%;
+  overflow-x: hidden; /* evita desplazamiento lateral */
+}
+
+header {
+  background-color: #f7cad0;
+  padding: 15px;
+  text-align: center;
+}
+
+nav a {
+  color: #444;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+
+/* === Página de inicio === */
+.home-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 40px 20px;
+  min-height: calc(79vh - 80px); /* ocupa la altura de la pantalla menos el header y footer */
+  background-color: rgba(0, 0, 0, 0.3);
+  box-sizing: border-box; /* asegura que el padding no agrande el alto total */
+     /* Fondo general de la página */
+  background-image: url('/img/pastel.png');
+  background-size: cover;       /* la imagen ocupa toda la pantalla */
+  background-position: center;  /* centrada */
+  background-repeat: no-repeat; /* evita repetirse */
+  background-attachment: scroll;
+}
+
+.home-content {
+  max-width: 500px;
+  margin: 5px;
+  text-align: left;
+
+  /* 🌫 Fondo del rectángulo detrás del texto */
+  background-color: rgba(180, 180, 180, 0.8);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.home-content h2 {
+  color: #2e2e2e;
+  font-size: 2rem;
+  margin-bottom: 10px;
+
+}
+
+.home-content p {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.btn-ver-productos {
+  background-color: #f7cad0;
+  color: #444;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-ver-productos:hover {
+  background-color: #f4a6b7;
+}
+
+
+/*Productos*/
+.section-producto{
+  background-color: #e5d5d5;
+}
+.productos-lista {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  height: 385px;
+  background-color:  #6d676a;;
+}
+
+
+.producto-card {
+  background-color: #ffeef5;
+  border: 1px solid #f0c6d1;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  width: 180px;
+  text-align: center;
+    overflow: hidden; /* mantiene la imagen dentro del recuadro */
+  
+
+}
+
+.producto-card img {
+  border-radius: 10%;
+  height: 205px;
+  width: 170px;
+  justify-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.producto-card img:hover {
+  transform: scale(1.1);  /* agranda un 10% */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* agrega una sombrita suave */
+}
+
+button {
+  background-color: #f7cad0;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-volver {
+background-color: #f7cad0;
+  color: #444;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+
+/* === Carrito === */
+.carrito-section {
+  position: relative;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  overflow: hidden;
+  color: #333;
+}
+
+/* Fondo con imagen y filtro pastel */
+.carrito-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(
+      rgba(255, 200, 210, 0.5), 
+      rgba(255, 240, 245, 0.8)
+    ),
+    url('/img/pastel.png') center/cover no-repeat;
+  z-index: -1; /* para que quede detrás del contenido */
+}
+
+.carrito-content {
+  background-color: rgba(157, 154, 154, 0.85);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  text-align: center;
+  max-width: 800px;
+  width: 60%;
+}
+
+.carrito-content h2 {
+  color: #444;
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+.carrito-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.carrito-content th, .carrito-content td {
+  padding: 10px;
+  border-bottom: 1px solid #f0c6d1;
+}
+
+.carrito-content th {
+  background-color: #f7cad0;
+  color: #444;
+}
+
+.carrito-content h3 {
+  margin: 20px 0;
+  color: #555;
+}
+
+.btn-ver-productos, .btn-volver{
+  background-color: #f7cad0;
+  color: #444;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-ver-productos:hover,
+.btn-volver:hover
+ {
+  background-color: #f4a6b7;
+}
+
+
+.btn-eliminar {
+  background-color: #f87171;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-eliminar:hover {
+  background-color: #ef4444;
+}
+
+
+
+
+
+
+
+
+
+
+/* === Footer === */
+.footer {
+  background-color: #f7cad0;
+  color: #444;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;  /* empuja el footer hacia abajo si hay poco contenido */
+  position: relative;
+  width: 100%;
+}
